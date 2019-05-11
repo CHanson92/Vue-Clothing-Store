@@ -1,13 +1,6 @@
 <template>
   <div id="app" class="container mt-5">
-    <checkout
-      :cart="cart"
-      :cartQty="cartQty"
-      :cartTotal="cartTotal"
-      @add="addItem"
-      @delete="deleteItem"
-    ></checkout>
-    <products
+    <router-view
       :cart="cart"
       :cartQty="cartQty"
       :cartTotal="cartTotal"
@@ -15,9 +8,9 @@
       :maximum.sync="maximum"
       :products="products"
       @toggle="toggleSliderStatus"
-      @delete="deleteItem"
       @add="addItem"
-    ></products>
+      @delete="deleteItem"
+    ></router-view>
   </div>
 </template>
 
